@@ -42,16 +42,16 @@ ENV PATH=$PATH:/root/composer/vendor/bin COMPOSER_ALLOW_SUPERUSER=1
 
 RUN mkdir -p /var/www/.composer && chown www-data:www-data /var/www/.composer
 
-ADD php.ini /etc/php/conf.d/
-ADD php.ini /usr/local/etc/php/conf.d
-ADD php.ini /etc/php/cli/conf.d/
-ADD php-fpm.conf /etc/php/php-fpm.d/
+# ADD php.ini /etc/php/conf.d/
+# ADD php.ini /usr/local/etc/php/conf.d
+# ADD php.ini /etc/php/cli/conf.d/
+# ADD php-fpm.conf /etc/php/php-fpm.d/
 
-COPY nginx.conf /etc/nginx/nginx.conf
-# Configure supervisord
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+# COPY nginx.conf /etc/nginx/nginx.conf
+# # Configure supervisord
+# COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-WORKDIR /var/www/drupal
+# WORKDIR /var/www/drupal
 
 RUN apt-get update && apt-get install -y libc-dev
 
