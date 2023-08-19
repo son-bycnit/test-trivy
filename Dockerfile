@@ -7,7 +7,12 @@ ARG gid=1000
 
 RUN usermod -u $uid www-data && groupmod -g $gid www-data
 
+RUN apt-get update && apt-get install -y python \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
 RUN apt-get update -y
+
 RUN apt-get upgrade -y
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql
