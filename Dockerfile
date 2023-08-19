@@ -1,7 +1,5 @@
 FROM php:8.2.9-fpm
 
-LABEL maintainer="Hoan Do Van <hvan@clever-age.com>"
-
 ARG uid=1000
 ARG gid=1000
 
