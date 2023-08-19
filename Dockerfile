@@ -5,7 +5,7 @@ ARG gid=1000
 
 RUN usermod -u $uid www-data && groupmod -g $gid www-data
 
-RUN apt-get update && apt-get install -y python \
+RUN apt-get update -y \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
